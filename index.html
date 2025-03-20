@@ -161,9 +161,10 @@
             <div class="info-item">
                 <strong>Version:</strong> 1.20.1 (Java)
             </div>
-            <div class="info-item">
+            <div class="info-item" onclick="copyToClipboard('skull-smp.mcboss.top')" style="cursor: pointer;">
                 <strong>IP Address:</strong> skull-smp.mcboss.top
-            </div>
+                <span id="copyMessage" style="color: green; display: none;"> (Copied!)</span>
+            </div>            
             <div class="info-item">
                 <strong>Modpack:</strong> Forge
             </div>
@@ -192,5 +193,18 @@
     <footer class="container">
         <p>&copy; 2025 Skull SMP - A peaceful modded Minecraft experience</p>
     </footer>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                let copyMessage = document.getElementById("copyMessage");
+                copyMessage.style.display = "inline"; // Show the "Copied!" message
+                setTimeout(() => {
+                    copyMessage.style.display = "none"; // Hide the message after 2 seconds
+                }, 2000);
+            }).catch(function(err) {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
 </body>
 </html>
