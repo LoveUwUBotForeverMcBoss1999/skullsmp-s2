@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull SMP Season 2</title>
+    <link rel="icon" href="server-icon.png">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #4caf50;
+            --card-bg: #1e1e1e;
+            --header-color: #212121;
+        }
+        
+        body {
+            font-family: 'Minecraft', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--header-color);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            width: 64px;
+            height: 64px;
+            margin-right: 15px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--accent-color);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        .server-info {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-item {
+            margin-bottom: 10px;
+        }
+        
+        .info-item strong {
+            display: inline-block;
+            width: 100px;
+            color: var(--accent-color);
+        }
+        
+        .download-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-button:hover {
+            background-color: #3e8e41;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="server-icon.png" alt="Skull SMP Logo">
+                <h1>Skull SMP</h1>
+            </div>
+            <p>Season 2 | Peaceful Modded Survival</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="server-info">
+            <h2>Server Information</h2>
+            <div class="info-item">
+                <strong>Version:</strong> 1.20.1 (Java)
+            </div>
+            <div class="info-item">
+                <strong>IP Address:</strong> skull-smp.mcboss.top
+            </div>
+            <div class="info-item">
+                <strong>Modpack:</strong> Forge
+            </div>
+            <div class="info-item">
+                <strong>Type:</strong> Whitelist Only
+            </div>
+        </div>
+        
+        <div class="server-info">
+            <h2>Join Our Community</h2>
+            <div class="info-item">
+                <strong>Discord:</strong> <a href="https://discord.gg/g7hgMHshej" target="_blank">https://discord.gg/g7hgMHshej</a>
+            </div>
+            <div class="info-item">
+                <strong>Whitelist:</strong> Submit your request in our <a href="https://discord.com/channels/1349052654151794799/1350034846671573093" target="_blank">Discord channel</a>
+            </div>
+        </div>
+        
+        <div class="server-info">
+            <h2>Get Started</h2>
+            <p>Download our custom modpack to join the server:</p>
+            <a href="#" class="download-button">Download ModPack</a>
+        </div>
+    </div>
+    
+    <footer class="container">
+        <p>&copy; 2025 Skull SMP - A peaceful modded Minecraft experience</p>
+        <p><a href="404.html">Page Not Found</a></p>
+    </footer>
+</body>
+</html>
