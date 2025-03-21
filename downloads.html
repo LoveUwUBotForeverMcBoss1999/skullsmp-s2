@@ -31,6 +31,8 @@
             --accent-color: #bb86fc; /* Replaced green with a subtle purple */
             --card-bg: #1e1e1e;
             --header-color: #212121;
+            --hover-color: #2c2c2c;
+            --modal-overlay: rgba(0, 0, 0, 0.7);
         }
 
         body {
@@ -135,10 +137,11 @@
             border-radius: 4px;
             font-weight: bold;
             transition: background-color 0.3s;
+            cursor: pointer;
         }
         
         .download-button:hover {
-            background-color: #3e8e41;
+            background-color: #a370db;
         }
         
         .nav-buttons {
@@ -170,6 +173,81 @@
             font-size: 0.9rem;
         }
         
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--modal-overlay);
+            backdrop-filter: blur(3px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin: 0;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        
+        .modal-content {
+            margin-bottom: 20px;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        
+        .modal-button {
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .download-modal-button {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        
+        .modrinth-button {
+            background-color: #30b27b;
+            color: white;
+        }
+        
         @media (max-width: 600px) {
             .container {
                 padding: 10px;
@@ -194,6 +272,10 @@
                 margin: 5px 0;
                 width: 80%;
                 text-align: center;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -233,7 +315,7 @@
                     <div class="download-title">3D Crops</div>
                     <div class="download-description">Enhances farming with beautiful 3D crop models.</div>
                 </div>
-                <a href="https://skullsmp.mcboss.top/downloads/crops-3d.zip" class="download-button" target="_blank">Download</a>
+                <button class="download-button" onclick="openModal('crops-modal')">Download</button>
             </div>
             
             <div class="download-item">
@@ -242,7 +324,7 @@
                     <div class="download-title">Fresh Animations</div>
                     <div class="download-description">Improves mob and entity animations for a more lively experience.</div>
                 </div>
-                <a href="https://skullsmp.mcboss.top/downloads/FreshAnimations_v1.9.2.zip" class="download-button" target="_blank">Download</a>
+                <button class="download-button" onclick="openModal('animations-modal')">Download</button>
             </div>
         </div>
         
@@ -252,8 +334,74 @@
         </div>
     </div>
     
+    <!-- 3D Crops Modal -->
+    <div id="crops-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">3D Crops</h3>
+                <button class="close-modal" onclick="closeModal('crops-modal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>Enhances farming with beautiful 3D crop models.</p>
+                <p><strong>Note:</strong> Our server is running Minecraft 1.20.1 Modded. We suggest using the 1.20.1 version of this texture pack for the best compatibility.</p>
+            </div>
+            <div class="modal-buttons">
+                <a href="https://skullsmp.mcboss.top/downloads/crops-3d.zip" class="modal-button download-modal-button" target="_blank">Download</a>
+                <a href="https://modrinth.com/resourcepack/3d-crops" class="modal-button modrinth-button" target="_blank">View on Modrinth</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fresh Animations Modal -->
+    <div id="animations-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Fresh Animations</h3>
+                <button class="close-modal" onclick="closeModal('animations-modal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>Improves mob and entity animations for a more lively experience.</p>
+                <p><strong>Note:</strong> Our server is running Minecraft 1.20.1 Modded. We suggest using the 1.20.1 version of this texture pack for the best compatibility.</p>
+            </div>
+            <div class="modal-buttons">
+                <a href="https://skullsmp.mcboss.top/downloads/FreshAnimations_v1.9.2.zip" class="modal-button download-modal-button" target="_blank">Download</a>
+                <a href="https://modrinth.com/resourcepack/fresh-animations" class="modal-button modrinth-button" target="_blank">View on Modrinth</a>
+            </div>
+        </div>
+    </div>
+    
     <footer class="container">
         <p>&copy; 2025 Skull SMP - A peaceful modded Minecraft experience</p>
     </footer>
+    
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                closeModal(event.target.id);
+            }
+        }
+        
+        // Close modal on escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(function(modal) {
+                    if (modal.style.display === 'flex') {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
