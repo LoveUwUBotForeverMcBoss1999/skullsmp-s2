@@ -186,15 +186,19 @@
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            overflow-y: auto;
+            padding: 20px 0;
         }
         
         .modal {
             background-color: var(--card-bg);
             border-radius: 8px;
             padding: 25px;
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .modal-header {
@@ -222,6 +226,15 @@
             margin-bottom: 20px;
         }
         
+        .modal-content ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .modal-content li {
+            margin-bottom: 10px;
+        }
+        
         .modal-buttons {
             display: flex;
             justify-content: space-between;
@@ -241,6 +254,11 @@
         .download-modal-button {
             background-color: var(--accent-color);
             color: #000;
+        }
+        
+        .secondary-download-button {
+            background-color: #4a4a4a;
+            color: var(--text-color);
         }
         
         .modrinth-button {
@@ -300,8 +318,7 @@
                     <div class="download-title">Skull SMP Season 2 Modpack</div>
                     <div class="download-description">Required to join the server. Contains all necessary mods for our Forge 1.20.1 server.</div>
                 </div>
-                <a href="still-not-available" class="download-button" target="_blank">Download</a>
-                <!-- skullsmp.mcboss.top/downloads/skullsmp-s2.rar -->
+                <button class="download-button" onclick="openModal('modpack-modal')">Download</button>
             </div>
         </div>
         
@@ -331,6 +348,60 @@
         <div class="nav-buttons">
             <a href="/" class="nav-button">Back to Home</a>
             <a href="https://discord.gg/g7hgMHshej" class="nav-button" target="_blank">Join Discord</a>
+        </div>
+    </div>
+    
+    <!-- Modpack Download Modal -->
+    <div id="modpack-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Skull SMP Season 2 Modpack Installation</h3>
+                <button class="close-modal" onclick="closeModal('modpack-modal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p>Follow these steps carefully to install the Skull SMP Season 2 Modpack:</p>
+                <ol>
+                    <li>
+                        <strong>Download Forge Installer</strong>
+                        <p>First, download and install the Forge version for Minecraft 1.20.1:</p>
+                    </li>
+                    <li>
+                        <strong>Run Forge Installer</strong>
+                        <p>Open the downloaded Forge installer and select "Install client" in the popup. Click OK.</p>
+                    </li>
+                    <li>
+                        <strong>Locate Minecraft Folder</strong>
+                        <p>Open Minecraft Launcher, go to "Installations", and create a new installation with the Forge 1.20.1 profile.</p>
+                    </li>
+                    <li>
+                        <strong>Find Mods Folder</strong>
+                        <p>Locate your .minecraft folder:
+                            <ul>
+                                <li>Windows: Press Windows + R, type %appdata%, then navigate to .minecraft</li>
+                                <li>Mac: Go to ~/Library/Application Support/minecraft</li>
+                                <li>Linux: ~/.minecraft</li>
+                            </ul>
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Extract Modpack</strong>
+                        <p>Unzip the downloaded Skull SMP Season 2 modpack archive.</p>
+                    </li>
+                    <li>
+                        <strong>Copy Mods</strong>
+                        <p>Copy all .jar files from the extracted "mods" folder into your .minecraft/mods directory.</p>
+                    </li>
+                    <li>
+                        <strong>Connect to Server</strong>
+                        <p>Use the server IP from the homepage to connect. Join our Discord if you need assistance!</p>
+                    </li>
+                </ol>
+                <p><strong>Note:</strong> Make sure you have the correct Minecraft version (1.20.1) and Forge installed.</p>
+            </div>
+            <div class="modal-buttons">
+                <a href="http://skullsmp.mcboss.top/downloads/skullsmp-s2.rar" class="modal-button download-modal-button" target="_blank">Download Modpack</a>
+                <a href="http://skullsmp.mcboss.top/downloads/forge-1.20.1-47.4.0-installer.jar" class="modal-button secondary-download-button" target="_blank">Download Forge</a>
+            </div>
         </div>
     </div>
     
