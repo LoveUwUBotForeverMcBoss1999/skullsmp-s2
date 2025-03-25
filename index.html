@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join Skull SMP Season 2 – a peaceful modded survival experience in Minecraft Java 1.20.1. Apply for the whitelist and start your adventure today!">
-    <meta name="keywords" content="Minecraft, SMP, Skull SMP, modded survival, Minecraft server, whitelist, peaceful SMP, Forge, modpack">
+    <meta name="description" content="Join Skull SMP Season 2 – a peaceful modded survival experience in Minecraft Java 1.20.1. Start your adventure today!">
+    <meta name="keywords" content="Minecraft, SMP, Skull SMP, modded survival, Minecraft server, peaceful SMP, Forge, modpack">
     <meta name="author" content="Skull SMP Team">
     
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:title" content="Skull SMP Season 2 - Peaceful Modded Survival">
-    <meta property="og:description" content="Join Skull SMP Season 2 – a peaceful modded survival experience in Minecraft Java 1.20.1. Apply for the whitelist and start your adventure today!">
+    <meta property="og:description" content="Join Skull SMP Season 2 – a peaceful modded survival experience in Minecraft Java 1.20.1. Start your adventure today!">
     <meta property="og:image" content="https://skullsmp.mcboss.top/server-icon.png">
     <meta property="og:url" content="https://skullsmp.mcboss.top">
     <meta property="og:type" content="website">
@@ -17,18 +17,21 @@
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Skull SMP Season 2 - Peaceful Modded Survival">
-    <meta name="twitter:description" content="Join Skull SMP Season 2 – a peaceful modded survival experience in Minecraft Java 1.20.1. Apply for the whitelist and start your adventure today!">
+    <meta name="twitter:description" content="Join Skull SMP Season 2 – a peaceful modded survival experience in Minecraft Java 1.20.1. AStart your adventure today!">
     <meta name="twitter:image" content="https://skullsmp.mcboss.top/server-icon.png">
     
     <!-- Favicon -->
     <link rel="icon" href="https://skullsmp.mcboss.top/server-icon.png" type="image/png">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <title>Skull SMP Season 2</title>
     <style>
         :root {
             --bg-color: #121212;
             --text-color: #e0e0e0;
-            --accent-color: #bb86fc; /* Replaced green with a subtle purple */
+            --accent-color: #bb86fc; /* Subtle purple */
             --card-bg: #1e1e1e;
             --header-color: #212121;
         }
@@ -40,6 +43,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #1a1a1a 100%);
         }
         
         .container {
@@ -66,12 +70,15 @@
             width: 64px;
             height: 64px;
             margin-right: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(187, 134, 252, 0.3);
         }
         
         h1 {
             font-size: 2.5rem;
             margin: 0;
             color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
         }
         
         h2 {
@@ -80,57 +87,84 @@
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 5px;
             margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .server-info {
             background-color: var(--card-bg);
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 20px;
             margin: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(187, 134, 252, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .server-info:hover {
+            transform: scale(1.02);
         }
         
         .info-item {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .info-item strong {
             display: inline-block;
-            width: 100px;
+            width: 120px;
             color: var(--accent-color);
+            font-size: 1rem;
+        }
+        
+        .info-item i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            font-size: 1.2rem;
         }
         
         .download-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background-color: var(--accent-color);
             color: #000;
             padding: 12px 24px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: bold;
             margin-top: 10px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .download-button:hover {
-            background-color: #3e8e41;
+            background-color: #9664d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
         
         footer {
             text-align: center;
             margin-top: 40px;
             padding: 20px 0;
-            border-top: 1px solid #333;
             font-size: 0.9rem;
+
+            border-top: 1px solid #333;
         }
         
         a {
             color: var(--accent-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         a:hover {
             text-decoration: underline;
+            color: #d1b6fc;
         }
         
         @media (max-width: 600px) {
@@ -140,6 +174,11 @@
             
             h1 {
                 font-size: 2rem;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -157,36 +196,36 @@
     
     <div class="container">
         <div class="server-info">
-            <h2>Server Information</h2>
+            <h2><i class="fas fa-server"></i>Server Information</h2>
             <div class="info-item">
+                <i class="fas fa-cube"></i>
                 <strong>Version:</strong> 1.20.1 (Java)
             </div>
             <div class="info-item" onclick="copyToClipboard('skull-smp.mcboss.top')" style="cursor: pointer;">
+                <i class="fas fa-network-wired"></i>
                 <strong>IP Address:</strong> skull-smp.mcboss.top
-                <span id="copyMessage" style="color: green; display: none;"> (Copied!)</span>
+                <span id="copyMessage" style="color: rgb(0, 225, 255); display: none;"> (Copied!)</span>
             </div>            
             <div class="info-item">
+                <img src="https://www.minecraft-france.fr/wp-content/uploads/2023/07/Forge.png" alt="Forge" style="width: 24px; height: 24px; margin-right: 10px;">
                 <strong>Modpack:</strong> Forge
             </div>
-            <div class="info-item">
-                <strong>Type:</strong> Whitelist Only
-            </div>
         </div>
         
         <div class="server-info">
-            <h2>Join Our Community</h2>
+            <h2><i class="fas fa-users"></i>Join Our Community</h2>
             <div class="info-item">
+                <i class="fab fa-discord"></i>
                 <strong>Discord:</strong> <a href="https://discord.gg/g7hgMHshej" target="_blank">https://discord.gg/g7hgMHshej</a>
             </div>
-            <div class="info-item">
-                <strong>Whitelist:</strong> Submit your request in our <a href="https://discord.com/channels/1349052654151794799/1350034846671573093" target="_blank">Discord channel</a>
-            </div>
         </div>
-        
+
         <div class="server-info">
-            <h2>Get Started</h2>
+            <h2><i class="fas fa-download"></i>Get Started</h2>
             <p>Download our custom modpack to join the server:</p>
-            <a href="downloads" class="download-button">Download ModPack</a>
+            <a href="downloads" class="download-button">
+                <i class="fas fa-file-download"></i> Download ModPack
+            </a>
         </div>
     </div>
     
@@ -197,9 +236,9 @@
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
                 let copyMessage = document.getElementById("copyMessage");
-                copyMessage.style.display = "inline"; // Show the "Copied!" message
+                copyMessage.style.display = "inline";
                 setTimeout(() => {
-                    copyMessage.style.display = "none"; // Hide the message after 2 seconds
+                    copyMessage.style.display = "none";
                 }, 2000);
             }).catch(function(err) {
                 console.error("Failed to copy: ", err);
